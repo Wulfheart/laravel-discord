@@ -5,6 +5,7 @@ namespace Wulfheart\LaravelDiscord;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Wulfheart\LaravelDiscord\Commands\LaravelDiscordCommand;
+use Wulfheart\LaravelDiscord\Commands\RegisterDiscordCommandsCommand;
 
 class LaravelDiscordServiceProvider extends PackageServiceProvider
 {
@@ -20,6 +21,10 @@ class LaravelDiscordServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_laravel-discord_table')
-            ->hasCommand(LaravelDiscordCommand::class);
+            ->hasRoute('discord')
+            ->hasCommands([
+                LaravelDiscordCommand::class,
+                RegisterDiscordCommandsCommand::class,
+            ]);
     }
 }
