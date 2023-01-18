@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Builder;
 
-use Nwilging\LaravelDiscordBot\Contracts\Support\Builder\EmbedBuilderContract;
 use Wulfheart\LaravelDiscord\Discord\Message\Embed;
 use Wulfheart\LaravelDiscord\Discord\Message\Embeds\AuthorEmbed;
 use Wulfheart\LaravelDiscord\Discord\Message\Embeds\FooterEmbed;
@@ -12,7 +11,7 @@ use Wulfheart\LaravelDiscord\Discord\Message\Embeds\ProviderEmbed;
 use Wulfheart\LaravelDiscord\Discord\Message\Embeds\ThumbnailEmbed;
 use Wulfheart\LaravelDiscord\Discord\Message\Embeds\VideoEmbed;
 
-class EmbedBuilder implements EmbedBuilderContract
+class EmbedBuilder
 {
     /**
      * @var Embed[]
