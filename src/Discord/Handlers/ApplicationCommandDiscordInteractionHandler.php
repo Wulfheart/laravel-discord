@@ -11,6 +11,9 @@ class ApplicationCommandDiscordInteractionHandler implements DiscordInteractionH
 {
     public function handle(Request $request): DiscordInteractionResponse
     {
-        return new DiscordInteractionResponse(InteractionResponseType::DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE);
+        //return new DiscordInteractionResponse(InteractionResponseType::DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE);
+        return new DiscordInteractionResponse(InteractionResponseType::CHANNEL_MESSAGE_WITH_SOURCE, [
+            'content' => 'Hello World',
+        ]);
     }
 }
