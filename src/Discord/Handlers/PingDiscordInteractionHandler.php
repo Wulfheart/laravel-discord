@@ -11,7 +11,7 @@ use Wulfheart\LaravelDiscord\Discord\DiscordInteractionResponse;
 class PingDiscordInteractionHandler implements DiscordInteractionHandlerInterface
 {
 
-    public function handle(Request $request): DiscordInteractionResponse
+    public function handle(Request $request): ?DiscordInteractionResponse
     {
         return new DiscordInteractionResponse(InteractionResponseType::PONG);
     }

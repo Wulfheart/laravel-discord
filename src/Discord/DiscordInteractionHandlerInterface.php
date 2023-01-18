@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 
 interface DiscordInteractionHandlerInterface
 {
-    public function handle(Request $request): DiscordInteractionResponse;
+    public function handle(Request $request): ?DiscordInteractionResponse;
 
 }

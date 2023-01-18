@@ -4,12 +4,12 @@ namespace Wulfheart\LaravelDiscord\Discord\Command\Handlers;
 
 use Illuminate\Http\Request;
 use Wulfheart\LaravelDiscord\Discord\Command\DiscordCommandHandlerInterface;
-use Wulfheart\LaravelDiscord\Discord\Command\SlashCommand;
+use Wulfheart\LaravelDiscord\Discord\Command\ApplicationCommand;
 
-class SlashCommandHandler implements DiscordCommandHandlerInterface
+class ApplicationCommandHandler implements DiscordCommandHandlerInterface
 {
     public function __construct(
-        protected SlashCommand $command
+        protected ApplicationCommand $command
     ) {
     }
 

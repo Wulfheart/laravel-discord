@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use ReflectionClass;
 use Symfony\Component\Finder\Finder;
-use Wulfheart\LaravelDiscord\Discord\Command\Handlers\SlashCommandHandler;
+use Wulfheart\LaravelDiscord\Discord\Command\Handlers\ApplicationCommandHandler;
 
 class DiscordCommandKernel
 {
@@ -49,23 +49,27 @@ class DiscordCommandKernel
     public function registerCommands(): void {
         $commandsForRegister = [];
         foreach ($this->commands as $command) {
-            ray($command instanceof SlashCommand);
-            if($command instanceof SlashCommand) {
-                $handler = new SlashCommandHandler($command);
+            ray($command instanceof ApplicationCommand);
+            if($command instanceof ApplicationCommand) {
+                $handler = new ApplicationCommandHandler($command);
             } else {
                 throw new \Exception("Command is not supported " . $command::class);
             }
-
-
             $commandsForRegister[] = $handler->toRegisterRequest();
 
         }
-
-        ray(config('discord.api_url').'/applications/'.config('discord.client_id').'/commands');
-
         $response = Http::withToken(config('discord.bot_token'), 'Bot')
             ->put(config('discord.api_url').'/applications/'.config('discord.client_id').'/commands', $commandsForRegister);
         $response->throw();
+    }
+
+    public function findApplicationCommand(string $name): ?DiscordCommand {
+        foreach ($this->commands as $command) {
+            if($command instanceof ApplicationCommand && $command->name === $name) {
+                return $command;
+            }
+        }
+        return null;
     }
 
 }

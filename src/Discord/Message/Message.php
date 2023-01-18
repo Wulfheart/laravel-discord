@@ -12,6 +12,7 @@ class Message
         protected ?string $content,
     )
     {
+        $this->embeds = new EmbedBuilder();
     }
 
     public static function create(?string $content = null): Message
