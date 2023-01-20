@@ -5,6 +5,13 @@
             "allow_mixed": true
         },
         "no_empty_phpdoc": true,
-        "no_empty_comment": true
+        "no_empty_comment": true,
+        "no_extra_blank_lines": {
+            "tokens": [
+                "extra",
+                "throw",
+                "use"
+            ]
+        }
     }
 }

@@ -11,12 +11,10 @@ class ApplicationCommandObject
     protected string $name;
     protected string $description;
 
-
     public function getId(): Snowflake
     {
         return $this->id;
     }
-
 
     public function setId(Snowflake $id): ApplicationCommandObject
     {
@@ -24,12 +22,10 @@ class ApplicationCommandObject
         return $this;
     }
 
-
     public function getType(): ApplicationCommandTypeEnum
     {
         return $this->type;
     }
-
 
     public function setType(ApplicationCommandTypeEnum $type): ApplicationCommandObject
     {
@@ -37,12 +33,10 @@ class ApplicationCommandObject
         return $this;
     }
 
-
     public function getApplicationId(): Snowflake
     {
         return $this->application_id;
     }
-
 
     public function setApplicationId(Snowflake $application_id): ApplicationCommandObject
     {
@@ -50,12 +44,10 @@ class ApplicationCommandObject
         return $this;
     }
 
-
     public function getGuildId(): Snowflake
     {
         return $this->guild_id;
     }
-
 
     public function setGuildId(Snowflake $guild_id): ApplicationCommandObject
     {
@@ -63,12 +55,10 @@ class ApplicationCommandObject
         return $this;
     }
 
-
     public function getName(): string
     {
         return $this->name;
     }
-
 
     public function setName(string $name): ApplicationCommandObject
     {
@@ -76,12 +66,10 @@ class ApplicationCommandObject
         return $this;
     }
 
-
     public function getDescription(): string
     {
         return $this->description;
     }
-
 
     public function setDescription(string $description): ApplicationCommandObject
     {
