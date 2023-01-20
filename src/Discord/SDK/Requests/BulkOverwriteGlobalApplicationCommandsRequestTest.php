@@ -16,8 +16,8 @@ class BulkOverwriteGlobalApplicationCommandsRequestTest extends TestCase
         $command = SlashApplicationCommandObject::make()->setName("test1")->setDescription("test");
         //dd($command->toArray());
         $request = new BulkOverwriteGlobalApplicationCommandsRequest([$command]);
-        dd($request->resolveEndpoint(), $connector->resolveBaseUrl());
         $res = $connector->send($request);
+        dd($request)
 
         dd($res->getRawResponse());
     }
