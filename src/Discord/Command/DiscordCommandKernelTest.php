@@ -4,6 +4,7 @@ namespace Wulfheart\LaravelDiscord\Discord\Command;
 
 use Wulfheart\LaravelDiscord\Tests\Fixtures\Commands\AbstractDiscordCommand;
 use Wulfheart\LaravelDiscord\Tests\Fixtures\Commands\Nested\SomeNestedDiscordCommand;
+use Wulfheart\LaravelDiscord\Tests\Fixtures\Commands\Nested\WithAttributeButNotInterface;
 use Wulfheart\LaravelDiscord\Tests\Fixtures\Commands\SomeDiscordCommand;
 use Wulfheart\LaravelDiscord\Tests\Fixtures\Commands\SomeNormalClass;
 use Wulfheart\LaravelDiscord\Tests\TestCase;
@@ -29,6 +30,7 @@ class DiscordCommandKernelTest extends TestCase
         $notExpectedClasses = [
             AbstractDiscordCommand::class,
             SomeNormalClass::class,
+            WithAttributeButNotInterface::class
         ];
         foreach ($notExpectedClasses as $notExpectedClass) {
             $this->assertTrue($commands->filter(fn (DiscordCommandInterface $command) => $command::class === $notExpectedClass)->count() === 0);

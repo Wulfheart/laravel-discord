@@ -6,6 +6,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 use ReflectionClass;
 use Symfony\Component\Finder\Finder;
+use Wulfheart\LaravelDiscord\Discord\Command\Attributes\ApplicationCommand;
 use Wulfheart\LaravelDiscord\Discord\Command\Attributes\Handlers\ApplicationCommandHandler;
 
 use function WyriHaximus\listClassesInFiles;
@@ -43,6 +44,7 @@ class DiscordCommandKernel
             if (
                 $reflection->implementsInterface(DiscordCommandInterface::class)
                 && !$reflection->isAbstract()
+                && collect($reflection->getAttributes(ApplicationCommand::class))->count() > 0
             ) {
                 /** @var DiscordCommandInterface $discordCommand */
                 $discordCommand = new $command();
@@ -57,6 +59,10 @@ class DiscordCommandKernel
      */
     public function registerCommands(): void
     {
+        $commandsToRegister = [];
+        foreach ($this->commands as $command) {
+            $command->getReflectionClass()->getAttributes(ApplicationCommandHandler::class);
+        }
         //$commandsForRegister = [];
         //foreach ($this->commands as $command) {
         //    ray($command instanceof ApplicationCommand);
