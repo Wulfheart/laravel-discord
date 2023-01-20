@@ -9,5 +9,4 @@ class NumberApplicationCommandOption extends ApplicationCommandOption
     protected array $choices;
     protected ?int $min_value;
     protected ?int $max_value;
-
 }
