@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Components;
@@ -39,7 +40,6 @@ abstract class GenericTextInputComponent extends Component
      * The minimum input length for a text input, min 0, max 4000
      *
      * @see https://discord.com/developers/docs/interactions/message-components#text-inputs-text-input-structure
-     * @param int $minLength
      * @return $this
      */
     public function withMinLength(int $minLength): self
@@ -52,7 +52,6 @@ abstract class GenericTextInputComponent extends Component
      * The maximum input length for a text input, min 1, max 4000
      *
      * @see https://discord.com/developers/docs/interactions/message-components#text-inputs-text-input-structure
-     * @param int $maxLength
      * @return $this
      */
     public function withMaxLength(int $maxLength): self
@@ -65,7 +64,6 @@ abstract class GenericTextInputComponent extends Component
      * Custom placeholder text if the input is empty, max 100 characters
      *
      * @see https://discord.com/developers/docs/interactions/message-components#text-inputs-text-input-structure
-     * @param string $placeholder
      * @return $this
      */
     public function withPlaceholder(string $placeholder): self
@@ -78,7 +76,6 @@ abstract class GenericTextInputComponent extends Component
      * A pre-filled value for this component, max 4000 characters
      *
      * @see https://discord.com/developers/docs/interactions/message-components#text-inputs-text-input-structure
-     * @param string $value
      * @return $this
      */
     public function withValue(string $value): self
@@ -91,7 +88,6 @@ abstract class GenericTextInputComponent extends Component
      * Whether this component is required to be filled, default true
      *
      * @see https://discord.com/developers/docs/interactions/message-components#text-inputs-text-input-structure
-     * @param bool $required
      * @return $this
      */
     public function required(bool $required = true): self
@@ -109,7 +105,6 @@ abstract class GenericTextInputComponent extends Component
      * Returns a Discord-API compatible text input array
      *
      * @see https://discord.com/developers/docs/interactions/message-components#text-inputs-text-input-structure
-     * @return array
      */
     public function toArray(): array
     {

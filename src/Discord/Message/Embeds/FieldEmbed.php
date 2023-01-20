@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Embeds;
@@ -32,7 +33,6 @@ class FieldEmbed extends Embed
      * Whether this field should display inline
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-field-structure
-     * @param bool $inline
      * @return $this
      */
     public function inline(bool $inline = true): self

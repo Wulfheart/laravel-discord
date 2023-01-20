@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Objects;
@@ -25,7 +26,6 @@ class EmojiObject extends SupportObject
      * Returns a Discord-API compliant emoji object array
      *
      * @see https://discord.com/developers/docs/resources/emoji#emoji-object-emoji-structure
-     * @return array
      */
     public function toArray(): array
     {

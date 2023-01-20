@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message;
@@ -46,7 +47,6 @@ abstract class Embed implements Arrayable
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-structure
      *
-     * @param int $colorCode
      * @return $this
      */
     public function withColor(int $colorCode): self
@@ -55,14 +55,13 @@ abstract class Embed implements Arrayable
         return $this;
     }
 
-    public abstract function getType(): string;
+    abstract public function getType(): string;
 
     /**
      * Returns a Discord-API compliant embed array
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-structure
      *
-     * @return array
      */
     public function toArray(): array
     {

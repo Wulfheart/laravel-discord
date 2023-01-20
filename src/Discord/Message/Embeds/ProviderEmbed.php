@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Embeds;
@@ -27,7 +28,6 @@ class ProviderEmbed extends Embed
      * Name of provider
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-provider-structure
-     * @param string $name
      * @return $this
      */
     public function withName(string $name): self
@@ -40,7 +40,6 @@ class ProviderEmbed extends Embed
      * URL of provider
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-provider-structure
-     * @param string $url
      * @return $this
      */
     public function withUrl(string $url): self

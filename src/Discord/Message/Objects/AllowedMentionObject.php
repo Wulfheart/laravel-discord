@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Objects;
@@ -30,7 +31,6 @@ class AllowedMentionObject extends SupportObject
      * For replies, whether to mention the author of the message being replied to
      *
      * @see https://discord.com/developers/docs/resources/channel#allowed-mentions-object-allowed-mentions-structure
-     * @param bool $mention
      * @return $this
      */
     public function mentionReplyUser(bool $mention = true): self
@@ -88,7 +88,6 @@ class AllowedMentionObject extends SupportObject
      * Allows mentions of specific roles
      *
      * @see https://discord.com/developers/docs/resources/channel#allowed-mentions-object-allowed-mentions-structure
-     * @param array $roles
      * @return $this
      */
     public function allowMentionsForRoles(array $roles): self
@@ -101,7 +100,6 @@ class AllowedMentionObject extends SupportObject
      * Allows mentions of specific users
      *
      * @see https://discord.com/developers/docs/resources/channel#allowed-mentions-object-allowed-mentions-structure
-     * @param array $users
      * @return $this
      */
     public function allowMentionsForUsers(array $users): self

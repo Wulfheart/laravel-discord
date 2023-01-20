@@ -3,6 +3,8 @@
     "rules": {
         "no_superfluous_phpdoc_tags": {
             "allow_mixed": true
-        }
+        },
+        "no_empty_phpdoc": true,
+        "no_empty_comment": true
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Components;
@@ -9,7 +10,8 @@ use Wulfheart\LaravelDiscord\Discord\Message\Traits\HasEmojiObject;
 
 abstract class GenericButtonComponent extends Component
 {
-    use FiltersRecursive, HasEmojiObject;
+    use FiltersRecursive;
+    use HasEmojiObject;
 
     public const STYLE_PRIMARY = 1;
     public const STYLE_SECONDARY = 2;
@@ -35,7 +37,6 @@ abstract class GenericButtonComponent extends Component
      * Whether the button is disabled
      *
      * @see https://discord.com/developers/docs/interactions/message-components#button-object-button-structure
-     * @param bool $disabled
      * @return $this
      */
     public function disabled(bool $disabled = true): self

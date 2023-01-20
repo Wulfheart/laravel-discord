@@ -8,26 +8,23 @@ use Wulfheart\LaravelDiscord\Discord\Command\Attributes\ApplicationCommand;
 use Wulfheart\LaravelDiscord\Discord\Command\Attributes\DiscordCommandKernel;
 use Wulfheart\LaravelDiscord\Discord\DiscordInteractionHandlerInterface;
 use Wulfheart\LaravelDiscord\Discord\DiscordInteractionResponse;
-use Wulfheart\LaravelDiscord\Discord\Message\Builder\EmbedBuilder;
-use Wulfheart\LaravelDiscord\Discord\Message\Message;
 
 class ApplicationCommandDiscordInteractionHandler implements DiscordInteractionHandlerInterface
 {
     public function handle(Request $request): ?DiscordInteractionResponse
     {
-
         $kernel = new DiscordCommandKernel();
         $kernel->loadDiscordCommands();
 
         $command = $kernel->findApplicationCommand($request->input('data.name'));
 
         // TODO: Change this later
-        if($command == null) {
+        if ($command == null) {
             return null;
         }
 
         /** @var ApplicationCommand $command */
-        if($command->async){
+        if ($command->async) {
             return new DiscordInteractionResponse(InteractionResponseType::DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE);
         } else {
             return new DiscordInteractionResponse(
@@ -35,7 +32,5 @@ class ApplicationCommandDiscordInteractionHandler implements DiscordInteractionH
                 $command->handle($request)->toMessageData()
             );
         }
-
-
     }
 }

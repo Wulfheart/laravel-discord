@@ -10,7 +10,8 @@ use Wulfheart\LaravelDiscord\Tests\TestCase;
 
 class DiscordCommandKernelTest extends TestCase
 {
-    public function testLoading(){
+    public function testLoading()
+    {
         $kernel = new DiscordCommandKernel();
         $kernel->loadDiscordCommands([config('discord.commands_dir')]);
         $this->assertNotEmpty($kernel->getCommands());
@@ -22,7 +23,7 @@ class DiscordCommandKernelTest extends TestCase
             SomeDiscordCommand::class,
         ];
         foreach ($expectedClasses as $expect) {
-            $this->assertTrue($commands->filter(fn(DiscordCommandInterface $command) => $command::class === $expect)->count() == 1);
+            $this->assertTrue($commands->filter(fn (DiscordCommandInterface $command) => $command::class === $expect)->count() == 1);
         }
 
         $notExpectedClasses = [
@@ -30,8 +31,7 @@ class DiscordCommandKernelTest extends TestCase
             SomeNormalClass::class,
         ];
         foreach ($notExpectedClasses as $notExpectedClass) {
-            $this->assertTrue($commands->filter(fn(DiscordCommandInterface $command) => $command::class === $notExpectedClass)->count() === 0);
+            $this->assertTrue($commands->filter(fn (DiscordCommandInterface $command) => $command::class === $notExpectedClass)->count() === 0);
         }
-
     }
 }

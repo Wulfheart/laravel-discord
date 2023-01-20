@@ -21,5 +21,4 @@ class RegisterDiscordCommandsCommand extends Command
 
         return self::SUCCESS;
     }
-
 }

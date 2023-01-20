@@ -6,12 +6,10 @@ use Wulfheart\LaravelDiscord\Discord\Message\Builder\EmbedBuilder;
 
 class Message
 {
-
     protected EmbedBuilder $embeds;
     protected function __construct(
         protected ?string $content,
-    )
-    {
+    ) {
         $this->embeds = new EmbedBuilder();
     }
 
@@ -20,7 +18,8 @@ class Message
         return new self($content);
     }
 
-    public function embeds(EmbedBuilder $embeds): Message {
+    public function embeds(EmbedBuilder $embeds): Message
+    {
         $this->embeds = $embeds;
         return $this;
     }
@@ -32,5 +31,4 @@ class Message
             'embeds' => $this->embeds->toArray(),
         ];
     }
-
 }

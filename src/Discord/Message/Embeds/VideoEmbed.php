@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Embeds;
@@ -32,7 +33,6 @@ class VideoEmbed extends Embed
      * A proxied url of the video
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-video-structure
-     * @param string $proxyUrl
      * @return $this
      */
     public function withProxyUrl(string $proxyUrl): self
@@ -45,7 +45,6 @@ class VideoEmbed extends Embed
      * Height of video
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-video-structure
-     * @param int $height
      * @return $this
      */
     public function withHeight(int $height): self
@@ -58,7 +57,6 @@ class VideoEmbed extends Embed
      * Width of video
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-video-structure
-     * @param int $width
      * @return $this
      */
     public function withWidth(int $width): self

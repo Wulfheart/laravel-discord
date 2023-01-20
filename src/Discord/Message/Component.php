@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message;
@@ -26,14 +27,13 @@ abstract class Component implements Arrayable
         $this->customId = $customId;
     }
 
-    public abstract function getType(): int;
+    abstract public function getType(): int;
 
     /**
      * Returns a Discord-API compliant component array
      *
      * @see https://discord.com/developers/docs/interactions/message-components#component-object
      *
-     * @return array
      */
     public function toArray(): array
     {

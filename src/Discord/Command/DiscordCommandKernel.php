@@ -2,13 +2,12 @@
 
 namespace Wulfheart\LaravelDiscord\Discord\Command;
 
-use Illuminate\Console\Application as Artisan;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Str;
 use ReflectionClass;
 use Symfony\Component\Finder\Finder;
 use Wulfheart\LaravelDiscord\Discord\Command\Attributes\Handlers\ApplicationCommandHandler;
+
 use function WyriHaximus\listClassesInFiles;
 
 class DiscordCommandKernel
@@ -35,11 +34,10 @@ class DiscordCommandKernel
             return;
         }
 
-        $finder = (new Finder)->in($paths)->files();
+        $finder = (new Finder())->in($paths)->files();
         $commands = listClassesInFiles(...$finder->getIterator());
 
         foreach ($commands as $command) {
-
             $reflection = new ReflectionClass($command);
 
             if (
@@ -47,10 +45,9 @@ class DiscordCommandKernel
                 && !$reflection->isAbstract()
             ) {
                 /** @var DiscordCommandInterface $discordCommand */
-                $discordCommand = new $command;
+                $discordCommand = new $command();
                 $discordCommand->setReflectionClass($reflection);
                 $this->commands[] = $discordCommand;
-
             }
         }
     }
@@ -85,5 +82,4 @@ class DiscordCommandKernel
         //}
         //return null;
     }
-
 }

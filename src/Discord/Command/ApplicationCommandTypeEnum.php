@@ -8,5 +8,4 @@ enum ApplicationCommandTypeEnum: int
     // Will be added in the future
     //case USER = 2;
     //case MESSAGE = 3;
-
 }

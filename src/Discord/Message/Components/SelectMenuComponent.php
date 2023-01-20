@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Components;
@@ -38,7 +39,6 @@ class SelectMenuComponent extends Component
      * Custom placeholder text if nothing is selected, max 150 characters
      *
      * @see https://discord.com/developers/docs/interactions/message-components#select-menu-object-select-menu-structure
-     * @param string $placeholder
      * @return $this
      */
     public function withPlaceholder(string $placeholder): self
@@ -51,7 +51,6 @@ class SelectMenuComponent extends Component
      * The minimum number of items that must be chosen; default 1, min 0, max 25
      *
      * @see https://discord.com/developers/docs/interactions/message-components#select-menu-object-select-menu-structure
-     * @param int $minValues
      * @return $this
      */
     public function withMinValues(int $minValues): self
@@ -64,7 +63,6 @@ class SelectMenuComponent extends Component
      * The maximum number of items that can be chosen; default 1, max 25
      *
      * @see https://discord.com/developers/docs/interactions/message-components#select-menu-object-select-menu-structure
-     * @param int $maxValues
      * @return $this
      */
     public function withMaxValues(int $maxValues): self
@@ -77,7 +75,6 @@ class SelectMenuComponent extends Component
      * Disables the select
      *
      * @see https://discord.com/developers/docs/interactions/message-components#select-menu-object-select-menu-structure
-     * @param bool $disabled
      * @return $this
      */
     public function disabled(bool $disabled = true): self

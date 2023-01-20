@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Embeds;
@@ -30,7 +31,6 @@ class FooterEmbed extends Embed
      * URL of footer icon (only supports http(s) and attachments)
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-footer-structure
-     * @param string $iconUrl
      * @return $this
      */
     public function withIconUrl(string $iconUrl): self
@@ -43,7 +43,6 @@ class FooterEmbed extends Embed
      * A proxied url of footer icon
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-footer-structure
-     * @param string $proxyIconUrl
      * @return $this
      */
     public function withProxyIconUrl(string $proxyIconUrl): self

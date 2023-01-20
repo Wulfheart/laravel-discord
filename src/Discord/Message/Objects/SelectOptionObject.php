@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Objects;
@@ -13,7 +14,8 @@ use Wulfheart\LaravelDiscord\Discord\Message\Traits\MergesArrays;
  */
 class SelectOptionObject extends SupportObject
 {
-    use MergesArrays, HasEmojiObject;
+    use MergesArrays;
+    use HasEmojiObject;
 
     protected string $label;
 
@@ -33,7 +35,6 @@ class SelectOptionObject extends SupportObject
      * An additional description of the option, max 100 characters
      *
      * @see https://discord.com/developers/docs/interactions/message-components#select-menu-object-select-option-structure
-     * @param string $description
      * @return $this
      */
     public function withDescription(string $description): self
@@ -46,7 +47,6 @@ class SelectOptionObject extends SupportObject
      * Will render this option as selected by default
      *
      * @see https://discord.com/developers/docs/interactions/message-components#select-menu-object-select-option-structure
-     * @param bool $default
      * @return $this
      */
     public function default(bool $default = true): self
@@ -59,7 +59,6 @@ class SelectOptionObject extends SupportObject
      * Returns a Discord-API compliant select option array
      *
      * @see https://discord.com/developers/docs/interactions/message-components#select-menu-object-select-option-structure
-     * @return array
      */
     public function toArray(): array
     {

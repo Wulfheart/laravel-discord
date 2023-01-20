@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wulfheart\LaravelDiscord\Discord\Message\Embeds;
@@ -32,7 +33,6 @@ class AuthorEmbed extends Embed
      * URL of author
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-author-structure
-     * @param string $url
      * @return $this
      */
     public function withUrl(string $url): self
@@ -45,7 +45,6 @@ class AuthorEmbed extends Embed
      * URL of author icon (only supports http(s) and attachments)
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-author-structure
-     * @param string $iconUrl
      * @return $this
      */
     public function withIconUrl(string $iconUrl): self
@@ -58,7 +57,6 @@ class AuthorEmbed extends Embed
      * A proxied url of author icon
      *
      * @see https://discord.com/developers/docs/resources/channel#embed-object-embed-author-structure
-     * @param string $proxyIconUrl
      * @return $this
      */
     public function withProxyIconUrl(string $proxyIconUrl): self

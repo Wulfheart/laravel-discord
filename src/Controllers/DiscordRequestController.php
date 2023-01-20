@@ -3,7 +3,6 @@
 namespace Wulfheart\LaravelDiscord\Controllers;
 
 use Discord\Interaction;
-use Discord\InteractionResponseType;
 use Discord\InteractionType;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -34,7 +33,7 @@ class DiscordRequestController extends Controller
             default => null,
         };
 
-        if($handler === null){
+        if ($handler === null) {
             return response('Invalid interaction type', 400);
         }
 
@@ -42,5 +41,4 @@ class DiscordRequestController extends Controller
         $handler = app($handler);
         return $handler->handle($request);
     }
-
 }

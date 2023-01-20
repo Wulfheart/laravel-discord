@@ -2,7 +2,6 @@
 
 namespace Wulfheart\LaravelDiscord\Discord\Command\Traits;
 
-
 trait DiscordCommandTools
 {
     protected \ReflectionClass $reflectionClass;
@@ -16,5 +15,4 @@ trait DiscordCommandTools
     {
         return $this->reflectionClass;
     }
-
 }

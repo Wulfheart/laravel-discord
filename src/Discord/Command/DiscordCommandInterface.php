@@ -8,5 +8,4 @@ interface DiscordCommandInterface
 
     public function getReflectionClass(): \ReflectionClass;
     public function setReflectionClass(\ReflectionClass $reflectionClass): void;
-
 }
