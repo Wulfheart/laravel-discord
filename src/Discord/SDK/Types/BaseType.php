@@ -4,8 +4,8 @@ namespace Wulfheart\LaravelDiscord\Discord\SDK\Types;
 
 class BaseType
 {
-    public static function make(
-    ): static {
+    public static function make(): static
+    {
         return new static();
     }
 }

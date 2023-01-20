@@ -1,5 +1,5 @@
 {
-    "preset": "symfony",
+    "preset": "psr12",
     "rules": {
         "no_superfluous_phpdoc_tags": {
             "allow_mixed": true
@@ -10,7 +10,8 @@
             "tokens": [
                 "extra",
                 "throw",
-                "use"
+                "use",
+                "curly_brace_block"
             ]
         }
     }
