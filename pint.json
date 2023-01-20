@@ -1,5 +1,5 @@
 {
-    "preset": "psr12",
+    "preset": "symfony",
     "rules": {
         "no_superfluous_phpdoc_tags": {
             "allow_mixed": true
