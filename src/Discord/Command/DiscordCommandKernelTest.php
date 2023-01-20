@@ -36,4 +36,12 @@ class DiscordCommandKernelTest extends TestCase
             $this->assertTrue($commands->filter(fn (DiscordCommandInterface $command) => $command::class === $notExpectedClass)->count() === 0);
         }
     }
+
+    public function testRegisterCommands()
+    {
+        $kernel = new DiscordCommandKernel();
+        $kernel->loadDiscordCommands([config('discord.commands_dir')]);
+        $kernel->registerCommands();
+        $this->assertTrue(true);
+    }
 }

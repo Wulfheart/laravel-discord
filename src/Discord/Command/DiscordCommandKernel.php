@@ -61,8 +61,9 @@ class DiscordCommandKernel
     {
         $commandsToRegister = [];
         foreach ($this->commands as $command) {
-            $command->getReflectionClass()->getAttributes(ApplicationCommandHandler::class);
+            $command->getReflectionClass()->getAttributes(ApplicationCommand::class)[0]->newInstance();
         }
+
         //$commandsForRegister = [];
         //foreach ($this->commands as $command) {
         //    ray($command instanceof ApplicationCommand);
