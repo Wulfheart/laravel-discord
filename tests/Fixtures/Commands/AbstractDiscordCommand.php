@@ -8,8 +8,8 @@ use Wulfheart\LaravelDiscord\Discord\Command\Traits\DiscordCommandTools;
 abstract class AbstractDiscordCommand implements DiscordCommandInterface
 {
     use DiscordCommandTools;
+
     public function handle(): void
     {
-
     }
 }
