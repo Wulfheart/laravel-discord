@@ -21,14 +21,14 @@ class DiscordCommandKernelTest extends TestCase
             SomeNestedDiscordCommand::class,
             SomeDiscordCommand::class,
         ];
+        foreach ($expectedClasses as $expect) {
+            $this->assertTrue($commands->filter(fn(DiscordCommandInterface $command) => $command::class === $expect)->count() == 1);
+        }
+
         $notExpectedClasses = [
             AbstractDiscordCommand::class,
             SomeNormalClass::class,
         ];
-
-        foreach ($expectedClasses as $expect) {
-            $this->assertTrue($commands->filter(fn(DiscordCommandInterface $command) => $command::class === $expect)->count() == 1);
-        }
         foreach ($notExpectedClasses as $notExpectedClass) {
             $this->assertTrue($commands->filter(fn(DiscordCommandInterface $command) => $command::class === $notExpectedClass)->count() === 0);
         }
