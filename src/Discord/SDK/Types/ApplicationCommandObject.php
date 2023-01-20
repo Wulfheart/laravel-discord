@@ -4,12 +4,24 @@ namespace Wulfheart\LaravelDiscord\Discord\SDK\Types;
 
 class ApplicationCommandObject extends BaseType
 {
-    protected Snowflake $id;
+    protected ?Snowflake $id = null;
     protected ApplicationCommandTypeEnum $type;
-    protected Snowflake $application_id;
-    protected Snowflake $guild_id;
+    protected ?Snowflake $application_id = null;
+    protected ?Snowflake $guild_id = null;
     protected string $name;
     protected string $description;
+
+    public function toArray(): array
+    {
+        return [
+            //'id' => $this->id?->content,
+            'type' => $this->type->value,
+            //'application_id' => $this->application_id?->content,
+            //'guild_id' => $this->guild_id?->content,
+            'name' => $this->name,
+            'description' => $this->description,
+        ];
+    }
 
     public function getId(): Snowflake
     {

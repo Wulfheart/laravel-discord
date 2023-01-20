@@ -26,8 +26,15 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
+    //    'client_public_key' => env('DISCORD_CLIENT_PUBLIC_KEY'),
+        //'commands_dir' => app_path('Discord'),
+        //'application_id' => env('DISCORD_APPLICATION_ID'),
+        //'discord_api_url' => 'https://discord.com/api',
+        //'bot_token' => env('DISCORD_BOT_TOKEN'),
+
         config()->set('database.default', 'testing');
         config()->set('discord.commands_dir', __DIR__.'/Fixtures/Commands');
+        config()->set('discord.client_id', env('DISCORD_APPLICATION_ID'));
         /*
         $migration = include __DIR__.'/../database/migrations/create_laravel-discord_table.php.stub';
         $migration->up();

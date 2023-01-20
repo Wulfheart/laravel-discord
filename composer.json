@@ -20,6 +20,7 @@
         "cuyz/valinor": "^1.2",
         "discord/interactions": "^2.2",
         "illuminate/contracts": "^9.0",
+        "sammyjo20/saloon": "^2.0",
         "simplito/elliptic-php": "^1.0",
         "spatie/laravel-package-tools": "^1.13.0",
         "wyrihaximus/list-classes-in-directory": "^1.5"

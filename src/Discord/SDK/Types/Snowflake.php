@@ -8,4 +8,9 @@ class Snowflake
         public string $content,
     ) {
     }
+
+    public static function make(string $content): self
+    {
+        return new self($content);
+    }
 }
