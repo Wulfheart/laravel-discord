@@ -2,7 +2,7 @@
 
 namespace Wulfheart\LaravelDiscord\Discord\SDK\Types;
 
-class ApplicationCommandObject
+class ApplicationCommandObject extends BaseType
 {
     protected Snowflake $id;
     protected ApplicationCommandTypeEnum $type;
