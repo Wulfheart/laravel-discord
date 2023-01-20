@@ -1,6 +1,8 @@
 {
     "preset": "psr12",
-    "rules":{
-
+    "rules": {
+        "no_superfluous_phpdoc_tags": {
+            "allow_mixed": true
+        }
     }
 }
