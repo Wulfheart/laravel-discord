@@ -27,6 +27,6 @@ class BulkOverwriteGlobalApplicationCommandsRequest extends Request implements H
 
     protected function defaultBody(): array
     {
-        return collect($this->commands)->map(fn(ApplicationCommandObject $command) => $command->toArray())->toArray();
+        return collect($this->commands)->map(fn (ApplicationCommandObject $command) => $command->toArray())->toArray();
     }
 }

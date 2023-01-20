@@ -14,10 +14,10 @@ class ApplicationCommandObject extends BaseType
     public function toArray(): array
     {
         return [
-            //'id' => $this->id?->content,
+            'id' => $this->id?->content,
             'type' => $this->type->value,
-            //'application_id' => $this->application_id?->content,
-            //'guild_id' => $this->guild_id?->content,
+            'application_id' => $this->application_id?->content,
+            'guild_id' => $this->guild_id?->content,
             'name' => $this->name,
             'description' => $this->description,
         ];
