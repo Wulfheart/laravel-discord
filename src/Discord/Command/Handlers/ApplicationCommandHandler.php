@@ -1,10 +1,10 @@
 <?php
 
-namespace Wulfheart\LaravelDiscord\Discord\Command\Handlers;
+namespace Wulfheart\LaravelDiscord\Discord\Command\Attributes\Handlers;
 
 use Illuminate\Http\Request;
-use Wulfheart\LaravelDiscord\Discord\Command\DiscordCommandHandlerInterface;
-use Wulfheart\LaravelDiscord\Discord\Command\ApplicationCommand;
+use Wulfheart\LaravelDiscord\Discord\Command\Attributes\DiscordCommandHandlerInterface;
+use Wulfheart\LaravelDiscord\Discord\Command\Attributes\ApplicationCommand;
 
 class ApplicationCommandHandler implements DiscordCommandHandlerInterface
 {

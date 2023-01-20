@@ -4,8 +4,8 @@ namespace Wulfheart\LaravelDiscord\Discord\Handlers;
 
 use Discord\InteractionResponseType;
 use Illuminate\Http\Request;
-use Wulfheart\LaravelDiscord\Discord\Command\ApplicationCommand;
-use Wulfheart\LaravelDiscord\Discord\Command\DiscordCommandKernel;
+use Wulfheart\LaravelDiscord\Discord\Command\Attributes\ApplicationCommand;
+use Wulfheart\LaravelDiscord\Discord\Command\Attributes\DiscordCommandKernel;
 use Wulfheart\LaravelDiscord\Discord\DiscordInteractionHandlerInterface;
 use Wulfheart\LaravelDiscord\Discord\DiscordInteractionResponse;
 use Wulfheart\LaravelDiscord\Discord\Message\Builder\EmbedBuilder;

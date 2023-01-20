@@ -27,7 +27,7 @@ class TestCase extends Orchestra
     public function getEnvironmentSetUp($app)
     {
         config()->set('database.default', 'testing');
-
+        config()->set('discord.commands_dir', __DIR__.'/Fixtures/Commands');
         /*
         $migration = include __DIR__.'/../database/migrations/create_laravel-discord_table.php.stub';
         $migration->up();
